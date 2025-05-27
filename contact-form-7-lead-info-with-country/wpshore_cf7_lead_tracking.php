@@ -5,7 +5,7 @@
  Description: Adds tracking info to contact form 7 outgoing emails when using one of these shortcodes: [tracking-info] or [tracking-info-noip] in the Message body. The lead tracking info includes: From Page URL, Original Referrer, Landing Page, User IP (only using first shortcode), Country of the User IP and Browser. In order to display the Country it needs the "<a href="https://wordpress.org/plugins/geoip-detect/" target="_blank" rel="noopener">GeoIP Detection</a>" plugin from the WordPress plugin repository.
  Author: Apasionados
  Author URI: https://apasionados.es/
- Version: 2.5
+ Version: 2.6
  Text Domain: apa-cf7-lead-tracking
  License: GPL v3
 */
@@ -54,7 +54,10 @@ if ( !is_plugin_active( 'contact-form-7-leads-tracking/wpshore_cf7_lead_tracking
 				$cf7ltisSecure = true;
 			}
 			$CF7LT_REQUEST_PROTOCOL = $cf7ltisSecure ? 'https://' : 'http://';
-			$_SESSION['LandingPage'] = $CF7LT_REQUEST_PROTOCOL . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"]; 
+			$_SESSION['LandingPage'] = $CF7LT_REQUEST_PROTOCOL . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
+			if (strpos($_SESSION['LandingPage'], '/wp-json/contact-form-7/v1/contact-forms/') !== false) {
+				$_SESSION['LandingPage'] = __('Not available. Probably because of do not track or similar privacy technology.','apa-cf7-lead-tracking');
+			}
 		}
 
 		// NEW FEATURE BEING TESTED: PagePath 01/02

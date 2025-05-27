@@ -1,11 +1,11 @@
 === Lead info with country for Contact Form 7 ===
 Contributors: apasionados, netconsulting
 Donate link: https://apasionados.es/
-Tags: contact form 7, contact form, contact, lead tracking, user info, user visit, country, ip, email, form
+Tags: contact form 7, lead tracking, user info
 Requires at least: 3.5
-Tested up to: 6.3
+Tested up to: 6.8
 Requires PHP: 5.3
-Stable tag: 2.5
+Stable tag: 2.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -125,6 +125,9 @@ Of course we do. ;-)
 
 == Changelog ==
 
+= 2.6 (27/MAY/2025) =
+* Added info when landing page on site is not available and "/wp-json/contact-form-7/v1/contact-forms/" or similar is shown as landing page. Instead of this URL a clear message is displayed now: "Not available. Probably because of do not track or similar privacy technology."
+
 = 2.5 (24/FEB/2022) =
 * Made changes to session_destroy() to prevent resetting the session to early. Thanks to @edioreza for brinnging this to our attention. Also included code from Tony J. to show path on website before filling and sending the form (we are testing this as we are not sure how it will behave on large sites).
 
@@ -193,8 +196,8 @@ Of course we do. ;-)
 
 == Upgrade Notice ==
 
-= 2.5 =
-UPDATED: Made changes to session_destroy() to prevent resetting the session to early.
+= 2.6 =
+UPDATED: Added info when landing page on site is not available and "/wp-json/contact-form-7/v1/contact-forms/" or similar is shown as landing page.
 
 == Contact ==
 

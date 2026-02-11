@@ -3,7 +3,7 @@ Contributors: apasionados, netconsulting
 Donate link: https://apasionados.es/
 Tags: contact form 7, lead tracking, user info
 Requires at least: 3.5
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 5.3
 Stable tag: 2.6
 License: GPLv3
